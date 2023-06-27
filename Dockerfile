@@ -1,11 +1,11 @@
-FROM debian:latest
+FROM ubuntu:latest
 
 RUN apt update \
-  && apt install -y -q ffmpeg wget python3 pipx \
+  && apt install -y -qq ffmpeg wget python3 python3-pip \
   && rm -r /var/cache/apt \
   && rm -r /var/lib/apt/lists
-RUN pipx install yle-dl
+RUN pip3 install yle-dl
 
 VOLUME /output
 WORKDIR /output
-ENTRYPOINT ["/root/.local/bin/yle-dl"]
+ENTRYPOINT ["/usr/local/bin/yle-dl"]
