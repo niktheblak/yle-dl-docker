@@ -3,6 +3,6 @@
 docker run \
   -it \
   --rm \
-  -v $PWD:/output \
+  -v "$PWD:/app" \
   yle-dl:latest \
   "$@"
